@@ -295,7 +295,7 @@ void updateData() {
   OpenWeatherMapForecast *forecastClient = new OpenWeatherMapForecast();
   forecastClient->setMetric(IS_METRIC);
   forecastClient->setLanguage(OPEN_WEATHER_MAP_LANGUAGE);
-  uint8_t allowedHours[] = {12, 0};
+  //uint8_t allowedHours[] = {12, 0}; //moved to settings.h
   forecastClient->setAllowedHours(allowedHours, sizeof(allowedHours));
   forecastClient->updateForecastsById(forecasts, OPEN_WEATHER_MAP_APP_ID, OPEN_WEATHER_MAP_LOCATION_ID, MAX_FORECASTS);
   delete forecastClient;
