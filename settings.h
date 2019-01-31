@@ -50,7 +50,14 @@ Slovenian -> sl, Spanish -> es, Turkish -> tr, Ukrainian -> ua, Vietnamese -> vi
 Chinese Simplified -> zh_cn, Chinese Traditional -> zh_tw.
 */
 String OPEN_WEATHER_MAP_LANGUAGE = "en";
-const uint8_t MAX_FORECASTS = 10;
+
+#define MAX_FORECASTS 9 //number of forcasts that are extracted from OWM. The minimum is the number of existing forcast frames
+
+//Time of respective forcast frames
+//Values are o'clock without timezone and DST conversion. Times are set from OWM and unchangable.
+//uint8_t allowedHours[] = {0, 3, 6, 9, 12, 15, 18, 21};  //all possible times
+//uint8_t allowedHours[] = {6, 12, 18};                   //6:00, 12:00, 18:00
+uint8_t allowedHours[] = {6,15};                          //6:00 and 15:00 (e.g. commuter time)
 
 // Adjust according to your language
 const String WDAY_NAMES[] = {"SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"};
